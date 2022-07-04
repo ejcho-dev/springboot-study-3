@@ -16,11 +16,12 @@ public class Member extends BaseEntity {
     @Column(name = "MEMBER_ID")
     private Long id;
 
+    private String name;
+
+    @Embedded
+    private Address address;
+
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
 
-    private String name;
-    private String city;
-    private String street;
-    private String zipcode;
 }
